@@ -11,32 +11,23 @@ import com.app.Result;
 import com.app.dao.ProductDAO;
 import com.app.vo.ProductVO;
 
-// Action인터페이스의 구현 클래스
-public class ProductWriteOkController implements Action {
-	
-	// DB에 관련된 걸 작업을 수행
+public class ProductUpdateOkController implements Action {
+
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+		
 		Result result = new Result();
 		ProductDAO productDAO = new ProductDAO();
 		ProductVO productVO = new ProductVO();
 		
-		// productName, productPrice 받기부터!
-		// DAO, VO 생성
+		productVO.setId(req.getParameter("id"));
+		req.getParameter("productName");
 		
-				
-		productVO.setProductName(req.getParameter("productName"));
-		productVO.setProductPrice(Integer.parseInt(req.getParameter("productPrice")));
-		productVO.setProductStock(Integer.parseInt(req.getParameter("productStock")));
-		productDAO.insert(productVO);
-		
-		
-		// 어떻게 : redirect 방식으로 이동
+
 		result.setRedirect(true);
-		// 어디로 : "list.product"로 이동
 		result.setPath("list.product");
 		
 		return result;
 	}
-	
+
 }
