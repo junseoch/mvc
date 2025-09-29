@@ -20,9 +20,9 @@
 		<p>상품재고 : <%=product.getProductStock() %></p>
 	</div>
 	<div>
-		<a href="/mvc/list.product">상품 목록</a>
-		<a href="/mvc/update.product?id=<%=product.getId() %>">상품 수정</a>
-		<a href="/mvc/delete-ok.product?id=<%=product.getId() %>">상품 삭제</a>
+		<button><a href="/mvc/list.product">상품 목록</a></button>
+		<button><a href="/mvc/update.product?id=<%=product.getId() %>">상품 수정</a></button>
+		<button><a href="/mvc/delete-ok.product?id=<%=product.getId() %>">상품 삭제</a></button>
 	</div>
 	
 </body>

@@ -9,6 +9,7 @@
 </head>
 <body>
 	
+	<!-- 부모 : object  자식 : VO -->
 	<%
 		ProductVO product = (ProductVO)request.getAttribute("product"); 
 		System.out.println(product);

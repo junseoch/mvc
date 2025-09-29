@@ -22,6 +22,8 @@ public class ProductUpdateController implements Action {
 		ProductDAO productDAO = new ProductDAO();
 		Long id = Long.parseLong(req.getParameter("id"));
 		
+		// ProductNotFoundException::new : 값이 null 
+		// productDAO.select(id)가 통째로 ProductVO
 		try {
 			ProductVO foundProduct =  productDAO.select(id).orElseThrow(ProductNotFoundException::new);
 			req.setAttribute("product", foundProduct);

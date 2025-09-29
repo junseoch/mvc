@@ -61,6 +61,7 @@ public class ProductFrontController extends HttpServlet{
 		
 		
 		// 어디서 어떻게를 result로 한 번에
+		// 각각의 컨트롤러들이 result를 리턴해줬을 때
 		if(result != null) {
 			if(result.isRedirect()) {
 				resp.sendRedirect(result.getPath());
